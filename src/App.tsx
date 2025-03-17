@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Github, Mail } from 'lucide-react';
 import { Button } from "./components/ui/button";
 import { ThemeToggle } from "./components/theme-toggle";
+import { GitHubStars } from "./components/github-stars";
+import { Footer } from "./components/footer";
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const revenueData = [
@@ -93,12 +95,11 @@ function App() {
                 formElement.scrollIntoView({ behavior: 'smooth' });
               }
             }}>Join Waitlist</Button>
-            <Button variant="outline" asChild>
-              <a href="https://github.com/Williiib/SorryInstagram" target="_blank" rel="noopener noreferrer">
-                <Github className="mr-2 h-4 w-4" />
-                Star on GitHub
-              </a>
-            </Button>
+            <GitHubStars 
+              repo="Williiib/SorryInstagram" 
+              variant="outline" 
+              size="default"
+            />
           </div>
         </div>
       </section>
@@ -185,20 +186,26 @@ function App() {
 
       {/* Interest Form */}
       <section id="tally-form" className="container py-16">
-        <div className="rounded-lg border bg-card p-8">
-          <h2 className="text-3xl font-bold text-center mb-4">Join the European Digital Revolution</h2>
-          <p className="text-center text-muted-foreground mb-8">Sign up to be part of the first wave of users reclaiming Europe's digital independence</p>
-          <iframe data-tally-src="https://tally.so/embed/w8MPrP?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="465" frameBorder="0" marginHeight={0} marginWidth={0} title="🚀 Sorry Instagram - an Instagram copy Purpose of this form: evaluate the interest for people to use a made & hosted in Europe social media platform."></iframe>
+        <div className="max-w-2xl mx-auto">
+          <div className="rounded-lg bg-card py-12 px-8 animate-border-glow">
+            <h2 className="text-3xl font-bold text-center mb-4">Join the European Digital Revolution</h2>
+            <p className="text-center text-muted-foreground mb-8">Sign up to be part of the first wave of users reclaiming Europe's digital independence</p>
+            <iframe 
+              data-tally-src="https://tally.so/embed/w8MPrP?hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+              loading="lazy" 
+              width="100%" 
+              height="465" 
+              frameBorder="0" 
+              marginHeight={0} 
+              marginWidth={0} 
+              title="🚀 Sorry Instagram - an Instagram copy Purpose of this form: evaluate the interest for people to use a made & hosted in Europe social media platform."
+              className="mx-auto"
+            ></iframe>
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t py-8 mt-16">
-        <div className="container text-center text-muted-foreground">
-          <p className="mb-2">Made with ❤️ in Europe</p>
-          <p className="text-sm">Open Source • EU Hosted • Community Driven</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

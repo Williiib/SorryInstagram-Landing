@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
-import { Github, Mail, ArrowLeft, Star } from 'lucide-react';
+import { Github, Mail, ArrowLeft } from 'lucide-react';
 import { Button } from "./components/ui/button";
 import { ThemeToggle } from "./components/theme-toggle";
+import { GitHubStars } from "./components/github-stars";
+import { Footer } from "./components/footer";
 
 function Contact() {
   useEffect(() => {
@@ -62,15 +64,7 @@ function Contact() {
               </Button>
             </a>
             <ThemeToggle />
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="flex items-center gap-1 bg-primary/5 border-primary/20 hover:bg-primary/10"
-              onClick={() => window.open('https://github.com/Williiib/SorryInstagram/stargazers', '_blank')}
-            >
-              <Star className="h-4 w-4 text-amber-500" />
-              <span>Star Project</span>
-            </Button>
+            <GitHubStars repo="Williiib/SorryInstagram" />
           </div>
         </div>
       </header>
@@ -105,6 +99,8 @@ function Contact() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }
